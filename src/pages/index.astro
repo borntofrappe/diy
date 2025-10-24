@@ -1,6 +1,6 @@
 ---
-import PokeTheLadyBug from "../microgames/PokeTheLadyBug.astro";
 import LinearGradientText from "../components/LinearGradientText.astro";
+import PokeTheLadyBug from "../microgames/PokeTheLadyBug.astro";
 ---
 
 <html lang="en">
@@ -13,6 +13,37 @@ import LinearGradientText from "../components/LinearGradientText.astro";
 	</head>
 	<body>
 		<LinearGradientText />
-		<PokeTheLadyBug />
+
+		<main>
+			<PokeTheLadyBug />
+		</main>
 	</body>
 </html>
+
+<style is:global>
+	body {
+		margin: 0;
+	}
+
+	main {
+		block-size: 100svb;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: hsl(356 89 71);
+		--border-color: hsl(153 24 77);
+
+		> svg {
+			display: block;
+			inline-size: 90vmin;
+			max-inline-size: 36rem;
+			block-size: auto;
+			border-radius: 0.25rem;
+			box-shadow:
+				0 -1rem 1rem hsl(209 61 16 / 0.15),
+				0 0 0 0.1rem currentColor,
+				0 0 0 1rem var(--border-color),
+				0 0 0 1.15rem currentColor;
+		}
+	}
+</style>
