@@ -1,5 +1,6 @@
 ---
-
+import Title from "../components/Title.astro";
+import AnimatedTitle from "../components/AnimatedTitle.astro";
 ---
 
 <html lang="en">
@@ -10,5 +11,12 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>DIY</title>
 	</head>
-	<body></body>
+	<body>
+		<svg viewBox="0 0 100 100">
+			<AnimatedTitle text="Animated title" />
+		</svg>
+		<svg viewBox="0 0 100 100">
+			<Title>Title</Title>
+		</svg>
+	</body>
 </html>
