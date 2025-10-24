@@ -1,6 +1,20 @@
 ---
 import LinearGradientText from "../components/LinearGradientText.astro";
-import PokeTheLadyBug from "../microgames/PokeTheLadyBug.astro";
+import PokeTheLadybug from "../microgames/PokeTheLadybug.astro";
+import PopTheBalloon from "../microgames/PopTheBalloon.astro";
+
+const collection = [
+	{
+		Component: PokeTheLadybug,
+		backgroundColor: "hsl(356 89 71)",
+		borderColor: "hsl(153 24 77)",
+	},
+	{
+		Component: PopTheBalloon,
+		backgroundColor: "hsl(46 93 56)",
+		borderColor: "hsl(41 100 47)",
+	},
+];
 ---
 
 <html lang="en">
@@ -15,7 +29,15 @@ import PokeTheLadyBug from "../microgames/PokeTheLadyBug.astro";
 		<LinearGradientText />
 
 		<main>
-			<PokeTheLadyBug />
+			{
+				collection.map(({ Component, backgroundColor, borderColor }) => (
+					<article
+						style={`--background-color: ${backgroundColor}; --border-color: ${borderColor}`}
+					>
+						<Component />
+					</article>
+				))
+			}
 		</main>
 	</body>
 </html>
@@ -27,11 +49,21 @@ import PokeTheLadyBug from "../microgames/PokeTheLadyBug.astro";
 
 	main {
 		block-size: 100svb;
+		overflow-y: scroll;
+		scroll-snap-type: y mandatory;
+
+		article {
+			scroll-snap-align: start;
+		}
+	}
+
+	article {
+		block-size: inherit;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: hsl(356 89 71);
-		--border-color: hsl(153 24 77);
+		background-color: var(--background-color, inherit);
+		--_border-color: var(--border-color, currentColor);
 
 		> svg {
 			display: block;
@@ -42,7 +74,7 @@ import PokeTheLadyBug from "../microgames/PokeTheLadyBug.astro";
 			box-shadow:
 				0 -1rem 1rem hsl(209 61 16 / 0.15),
 				0 0 0 0.1rem currentColor,
-				0 0 0 1rem var(--border-color),
+				0 0 0 1rem var(--_border-color),
 				0 0 0 1.15rem currentColor;
 		}
 	}
