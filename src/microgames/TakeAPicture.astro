@@ -38,8 +38,8 @@ const frames = [
   none: `takeAPictureFrame${i + 1}.begin`,
   text,
   filter: filter ? "url(#take-a-picture-filter-lens)" : "",
-  fill: filter ? "#f7f7f7" : "currentColor",
-  stroke: filter ? "currentColor" : "#f7f7f7",
+  fill: filter ? "#f7f7f7" : "#102a42",
+  stroke: filter ? "#102a42" : "#f7f7f7",
 }));
 
 const href = `#take-a-picture-symbol-${Math.floor(Math.random() * 2)}`;
@@ -54,7 +54,7 @@ const href = `#take-a-picture-symbol-${Math.floor(Math.random() * 2)}`;
       viewBox="-2.0500000476837158 -2.1 4.1000000953674316 4.566146087646484"
     >
       <g
-        stroke="currentColor"
+        stroke="#102a42"
         stroke-width="0.2"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -83,7 +83,7 @@ const href = `#take-a-picture-symbol-${Math.floor(Math.random() * 2)}`;
           </g>
         </g>
         <path
-          fill="currentColor"
+          fill="#102a42"
           d="M 0 -1 c 0.75 0.5 0.75 2.5 0 3 -0.75 -0.5 -0.75 -2.5 0 -3"></path>
       </g>
     </symbol>
@@ -93,7 +93,7 @@ const href = `#take-a-picture-symbol-${Math.floor(Math.random() * 2)}`;
       viewBox="-2.1 -1.7250256299972534 4.2 4.925025653839111"
     >
       <g
-        stroke="currentColor"
+        stroke="#102a42"
         stroke-width="0.2"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -153,12 +153,12 @@ const href = `#take-a-picture-symbol-${Math.floor(Math.random() * 2)}`;
       ))
     }
 
-    <rect fill="currentColor" width="80" height="50"></rect>
+    <rect fill="#102a42" width="80" height="50"></rect>
 
     <g fill="none">
       <use href="#take-a-picture-lens" stroke="#f7f7f7" stroke-width="3.25"
       ></use>
-      <use href="#take-a-picture-lens" stroke="currentColor" stroke-width="1.75"
+      <use href="#take-a-picture-lens" stroke="#102a42" stroke-width="1.75"
       ></use>
     </g>
 
@@ -293,7 +293,7 @@ const href = `#take-a-picture-symbol-${Math.floor(Math.random() * 2)}`;
       text="Moment's gone..."
       fontSize={6}
       fill="#f7f7f7"
-      stroke="currentColor"
+      stroke="#102a42"
       begin="takeAPictureMotionEnd.begin"
       end="takeAPictureEndMotion.begin"
       repeatCount="indefinite"
@@ -311,7 +311,7 @@ const href = `#take-a-picture-symbol-${Math.floor(Math.random() * 2)}`;
   <g style="cursor: pointer">
     <set id={start} begin="click" attributeName="display" to="none"></set>
 
-    <Title fill="#f7f7f7" stroke="currentColor">Photograph!</Title>
+    <Title fill="#f7f7f7" stroke="#102a42">Photograph!</Title>
 
     <rect width="80" height="50" opacity="0"></rect>
   </g>

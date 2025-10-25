@@ -145,7 +145,7 @@ const objects = ids.map((id) => ({
         ({ id, body, head, eyeLeft, eyeRight, dotLeft, dotRight, line }) => (
           <g {id}>
             <g transform="translate(0 -8)">
-              <path d={head} fill="currentColor" />
+              <path d={head} fill="#102a42" />
               <g transform="translate(0 -3.25)">
                 <g fill="#f7f7f7">
                   <path transform="translate(-2 0)" d={eyeLeft} />
@@ -156,7 +156,7 @@ const objects = ids.map((id) => ({
 
             <path d={body} fill="#f70000" stroke="none" stroke-width="0.5" />
 
-            <g fill="currentColor">
+            <g fill="#102a42">
               <path transform="translate(-5 -2)" d={dotLeft} />
               <path transform="translate(5 2)" d={dotRight} />
             </g>
@@ -164,7 +164,7 @@ const objects = ids.map((id) => ({
             <path
               d={line}
               fill="none"
-              stroke="currentColor"
+              stroke="#102a42"
               stroke-width="0.5"
               stroke-linecap="square"
             />
